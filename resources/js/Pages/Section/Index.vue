@@ -44,6 +44,7 @@ export default {
                                     rounded
                                 "
                                 :href="route('section.create')"
+                                v-if="$can('write section')"
                             >
                                 Posts Create
                             </Link>
@@ -60,12 +61,14 @@ export default {
                                     <td class="px-4 py-2">{{ section.name }}</td>
                                     <td class="px-4 py-2 font-extrabold">
                                         <Link
+                                            v-if="$can('edit section')"
                                             class="text-green-700"
                                             :href="route('section.edit', section.id)"
                                         >
                                             Edit
                                         </Link>
                                         <Link
+                                            v-if="$can('delete section')"
                                             @click="destroy(section.id)"
                                             class="text-red-700"
                                             >Delete</Link

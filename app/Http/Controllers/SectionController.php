@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Section;
+// use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
+// use Spatie\Permission\Models\Role;
+// use Spatie\Permission\Models\Permission;
 
 class SectionController extends Controller
 {
@@ -23,6 +26,31 @@ class SectionController extends Controller
             'sections' => $sections,
         ]);
     }
+
+    // public function index()
+    // {
+    //     $role = Role::create(['name' => 'writer']);
+    //     $role = Role::create(['name' => 'editor']);
+    //     $role = Role::create(['name' => 'viewer']);
+    //     $role = Role::create(['name' => 'admin']);
+
+    //     $permission = Permission::create(['name' => 'write section']);
+    //     $permission = Permission::create(['name' => 'edit section']);
+    //     $permission = Permission::create(['name' => 'view section']);
+    //     $permission = Permission::create(['name' => 'delete section']);
+    //     $permission = Permission::create(['name' => 'write news']);
+    //     $permission = Permission::create(['name' => 'edit news']);
+    //     $permission = Permission::create(['name' => 'view news']);
+    //     $permission = Permission::create(['name' => 'delete news']);
+
+    //     $role = Role::where('id', 4)->first();
+    //     $permission = Permission::where('id', 8)->first();
+    //     $role->givePermissionTo($permission);
+
+    //     $user = User::findOrFail(3);
+    //     $user->givePermissionTo(['']);
+    //     $user->assignRole('editor');
+    // }
 
     /**
      * Show the form for creating a new resource.

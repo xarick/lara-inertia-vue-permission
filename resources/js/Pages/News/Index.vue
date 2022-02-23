@@ -43,6 +43,7 @@ export default {
                                     bg-green-500
                                     rounded
                                 "
+                                v-if="$can('write news')"
                                 :href="route('news.create')"
                             >
                                 News Create
@@ -66,12 +67,14 @@ export default {
                                     </td>
                                     <td class="px-4 py-2 font-extrabold">
                                         <Link
+                                            v-if="$can('edit news')"
                                             class="text-green-700"
                                             :href="route('news.edit', nw.id)"
                                         >
                                             Edit
                                         </Link>
                                         <Link
+                                            v-if="$can('delete news')"
                                             @click="destroy(nw.id)"
                                             class="text-red-700"
                                             >Delete</Link
